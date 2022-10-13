@@ -1,4 +1,4 @@
-module github.com/projectdiscovery/dnsx
+module github.com/X-Team-Robots/dnsx
 
 go 1.17
 

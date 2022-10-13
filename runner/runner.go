@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/X-Team-Robots/dnsx/libs/dnsx"
 	"github.com/miekg/dns"
 	"github.com/pkg/errors"
 	"github.com/projectdiscovery/clistats"
-	"github.com/projectdiscovery/dnsx/libs/dnsx"
 	"github.com/projectdiscovery/fileutil"
 	"github.com/projectdiscovery/goconfig"
 	"github.com/projectdiscovery/gologger"
@@ -591,7 +591,7 @@ func (r *Runner) worker() {
 				hasAxfrData = len(axfrData.DNSData) > 0
 			}
 
-			// if the query type is only AFXR then output only if we have results (ref: https://github.com/projectdiscovery/dnsx/issues/230#issuecomment-1256659249)
+			// if the query type is only AFXR then output only if we have results (ref: https://github.com/X-Team-Robots/dnsx/issues/230#issuecomment-1256659249)
 			if len(r.dnsx.Options.QuestionTypes) == 1 && !hasAxfrData && !r.options.JSON {
 				continue
 			}
